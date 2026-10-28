@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Học tiếng Trung · Bài 5</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fbf5ff;--card:#fff;--ink:#3b3350;--mut:#8b82a3;--pri:#a78bfa;--pri2:#c4b5fd;--pink:#fbcfe8;--mint:#bbf7d0;--peach:#fed7aa;--sky:#bae6fd;--line:#eadcfb;--ok:#4ade80;--bad:#fb7185}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1829;--card:#2a2339;--ink:#f1eaff;--mut:#a99fc4;--line:#43395c;--pink:#6b3a58;--mint:#2f5a45;--peach:#6b4a2f;--sky:#2f4f66}}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh}
+header{background:linear-gradient(120deg,var(--pink),var(--pri2),var(--sky));padding:20px 16px 16px;text-align:center;color:#3b3350}
+header h1{margin:0;font-size:1.35rem}header p{margin:4px 0 0;font-size:.85rem}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav button{flex:0 0 auto;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 13px;border-radius:999px;font-size:.85rem;cursor:pointer}
+nav button.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+main{max-width:720px;margin:0 auto;padding:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 6px 18px rgba(167,139,250,.15)}
+.han{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+input.s{width:100%;padding:11px 14px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1rem;margin-bottom:10px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse}
+th{background:var(--pri2);color:#3b3350;padding:8px;font-size:.8rem;text-align:left}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:nth-child(even) td{background:rgba(196,181,253,.1)}
+td.h{font-size:1.5rem;font-weight:600}td.p{color:var(--pri);font-weight:600}
+.sp{border:0;background:var(--peach);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem}
+.btn{border:0;background:var(--pri);color:#fff;padding:10px 18px;border-radius:14px;font-size:.95rem;cursor:pointer}
+.btn.g{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.row{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap;align-items:center}
+.fc{perspective:900px;height:260px;cursor:pointer}
+.fi{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fc.f .fi{transform:rotateY(180deg)}
+.fs{position:absolute;inset:0;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px}
+.fs.a{background:linear-gradient(135deg,var(--card),var(--pink));border:2px solid var(--pink)}
+.fs.b{background:linear-gradient(135deg,var(--mint),var(--sky));color:#2d3a4a;transform:rotateY(180deg)}
+.big{font-size:4rem;font-weight:700}
+.stat{display:flex;justify-content:space-between;font-size:.85rem;color:var(--mut);margin-bottom:10px}
+.q{text-align:center;padding:14px 0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.opt{padding:14px 8px;border-radius:16px;border:2px solid var(--line);background:var(--bg);color:var(--ink);font-size:1.05rem;cursor:pointer;min-height:56px}
+.opt.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.opt.no{background:var(--bad);color:#fff;border-color:var(--bad)}
+.zone{min-height:64px;border:2px dashed var(--pri2);border-radius:16px;padding:8px;display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tk{padding:8px 14px;border-radius:12px;background:var(--mint);border:0;color:#24403a;font-size:1.4rem;cursor:pointer}
+.zone .tk{background:var(--peach);color:#4a3320}
+.msg{text-align:center;min-height:26px;font-weight:600;margin-top:8px}
+.ref{background:var(--peach);color:#4a3320;border-radius:14px;padding:10px;margin-top:8px;font-weight:500}
+.mut{color:var(--mut)}
+</style>
+</head>
+<body>
+<header><h1>学汉语 · Bài 5</h1><p>Từ vựng mới · bấm 🔊 để nghe đọc mẫu</p></header>
+<nav id="nav"></nav>
+<main id="v"></main>
+<script>
+const D=`个|gè|cái, con, người (lượng từ chung)
+国家|guójiā|quốc gia
+谁|shéi|ai
+秘书|mìshū|thư ký
+学习/学|xuéxí/xué|học, học tập
+汉语/中文|Hànyǔ/Zhōngwén|tiếng Hán, tiếng Trung
+韩语|Hányǔ|tiếng Hàn
+英语|Yīngyǔ|tiếng Anh
+日语|Rìyǔ|tiếng Nhật
+法语|Fǎyǔ|tiếng Pháp
+越南语|Yuènányǔ|tiếng Việt
+会|huì|biết, có thể
+说|shuō|nói
+一点|yìdiǎn|một chút
+中心|zhōngxīn|trung tâm
+真|zhēn|thật, thật là
+怎么样|zěnmeyàng|thế nào
+对不起|duìbuqǐ|xin lỗi
+不好意思|bù hǎoyìsi|ngại quá, xin lỗi
+故意|gùyì|cố ý
+没关系|méiguānxi|không sao
+知道|zhīdào|biết
+晚|wǎn|muộn, tối
+喂|wèi|alo, a lô
+远|yuǎn|xa
+近|jìn|gần
+太|tài|quá
+离|lí|cách
+多少|duōshao|bao nhiêu
+公里|gōnglǐ|km, ki-lô-mét
+大概|dàgài|khoảng, đại khái
+找|zhǎo|tìm
+出去|chūqù|đi ra ngoài
+今天|jīntiān|hôm nay
+明天|míngtiān|ngày mai
+昨天|zuótiān|hôm qua
+星期|xīngqī|tuần, thứ
+星期一|xīngqīyī|thứ hai
+星期二|xīngqī'èr|thứ ba
+星期三|xīngqīsān|thứ tư
+星期四|xīngqīsì|thứ năm
+星期五|xīngqīwǔ|thứ sáu
+星期六|xīngqīliù|thứ bảy
+星期天/日|xīngqītiān/xīngqīrì|chủ nhật
+周|zhōu|tuần
+上个|shàng ge|(cái) trước, vừa rồi
+下个|xià ge|(cái) sau, tới
+出差|chūchāi|đi công tác
+有空儿|yǒu kòngr|có rảnh
+吧|ba|nhé, đi (ngữ khí)
+可以|kěyǐ|có thể, được
+会议|huìyì|cuộc họp, hội nghị
+现在|xiànzài|bây giờ
+天气|tiānqì|thời tiết
+冷|lěng|lạnh
+热|rè|nóng`.split('\n').map(l=>{const[h,p,v]=l.split('|');return{h,p,v}});
+
+const S=`我 学习 汉语|Tôi học tiếng Hán
+你 学习 什么?|Bạn học gì?
+你 会 说 汉语 吗?|Bạn biết nói tiếng Hán không?
+我 会 说 一点 汉语|Tôi biết nói một chút tiếng Hán
+他 不 会 说 英语|Anh ấy không biết nói tiếng Anh
+她 会 说 日语|Cô ấy biết nói tiếng Nhật
+我们 都 会 说 越南语|Chúng tôi đều biết nói tiếng Việt
+你 会 说 韩语 吗?|Bạn biết nói tiếng Hàn không?
+老师 会 说 法语|Giáo viên biết nói tiếng Pháp
+他 学 中文|Anh ấy học tiếng Trung
+你 学 汉语 吗?|Bạn học tiếng Hán không?
+谁 是 你 的 老师?|Ai là giáo viên của bạn?
+他 是 谁?|Anh ấy là ai?
+她 是 我 的 秘书|Cô ấy là thư ký của tôi
+你 的 秘书 是 哪 国 人?|Thư ký của bạn là người nước nào?
+这 是 哪 个 国家?|Đây là quốc gia nào?
+对不起|Xin lỗi
+对不起 我 不 知道|Xin lỗi, tôi không biết
+没关系|Không sao đâu
+不好意思 我 来 晚 了|Ngại quá, tôi đến muộn rồi
+他 不 是 故意 的|Anh ấy không cố ý
+我 不 是 故意 的|Tôi không cố ý
+你 知道 吗?|Bạn biết không?
+你 知道 他 叫 什么 名字 吗?|Bạn biết anh ấy tên gì không?
+我 知道 他 姓 王|Tôi biết anh ấy họ Vương
+喂 你 在 哪儿?|Alo, bạn đang ở đâu?
+喂 王 经理 在 吗?|Alo, giám đốc Vương có ở đó không?
+你 家 远 吗?|Nhà bạn xa không?
+我 家 很 近|Nhà tôi rất gần
+学校 离 我 家 很 近|Trường học cách nhà tôi rất gần
+公司 离 这里 太 远 了|Công ty cách đây quá xa rồi
+银行 离 这儿 远 吗?|Ngân hàng cách đây xa không?
+超市 离 公司 不 远|Siêu thị cách công ty không xa
+学校 离 市场 多少 公里?|Trường học cách chợ bao nhiêu km?
+公司 离 家 大概 十 公里|Công ty cách nhà khoảng 10 km
+海防 离 这里 大概 二 十 公里|Hải Phòng cách đây khoảng 20 km
+你 家 离 公司 多少 公里?|Nhà bạn cách công ty bao nhiêu km?
+你 找 谁?|Bạn tìm ai?
+我 找 王 经理|Tôi tìm giám đốc Vương
+我 找 老板|Tôi tìm ông chủ
+经理 出去 了|Giám đốc đi ra ngoài rồi
+老板 现在 不 在|Ông chủ bây giờ không có ở đây
+老师 出去 了 吗?|Giáo viên đi ra ngoài rồi à?
+今天 星期 几?|Hôm nay thứ mấy?
+今天 星期一|Hôm nay thứ hai
+明天 星期二|Ngày mai thứ ba
+昨天 星期天|Hôm qua là chủ nhật
+今天 不 是 星期五|Hôm nay không phải thứ sáu
+明天 是 星期三 吗?|Ngày mai là thứ tư à?
+昨天 是 星期六|Hôm qua là thứ bảy
+星期四 我 要 去 学校|Thứ năm tôi phải đến trường
+星期日 我 回 家|Chủ nhật tôi về nhà
+这 周 我 很 忙|Tuần này tôi rất bận
+这 周 你 忙 吗?|Tuần này bạn có bận không?
+上个 星期 我 去 出差|Tuần trước tôi đi công tác
+下个 星期 我 也 要 出差|Tuần sau tôi cũng phải đi công tác
+下个 星期 你 有空儿 吗?|Tuần sau bạn có rảnh không?
+你 现在 有空儿 吗?|Bây giờ bạn có rảnh không?
+我 现在 很 忙|Bây giờ tôi rất bận
+你 要 出差 吗?|Bạn sắp đi công tác à?
+他 去 出差 了|Anh ấy đi công tác rồi
+经理 明天 去 出差|Ngày mai giám đốc đi công tác
+司机 今天 去 出差 吗?|Hôm nay tài xế đi công tác à?
+我们 可以 坐 吗?|Chúng tôi ngồi được không?
+你 可以 进 来|Bạn có thể vào
+可以 吗?|Được không?
+可以|Được
+不 可以|Không được
+请 坐 吧|Mời ngồi nhé
+我们 去 吧|Chúng ta đi thôi
+你 回 家 吧|Bạn về nhà đi
+你 去 学校 吧|Bạn đến trường đi
+我们 明天 去 超市 吧|Ngày mai chúng ta đi siêu thị nhé
+星期六 我们 去 市场 吧|Thứ bảy chúng ta đi chợ nhé
+我们 现在 去 银行 吧|Bây giờ chúng ta đến ngân hàng nhé
+今天 有 会议|Hôm nay có cuộc họp
+明天 有 会议 吗?|Ngày mai có cuộc họp không?
+现在 有 会议|Bây giờ có cuộc họp
+经理 在 会议 中心|Giám đốc ở trung tâm hội nghị
+会议 中心 离 公司 很 近|Trung tâm hội nghị cách công ty rất gần
+会议 中心 离 这里 大概 三 公里|Trung tâm hội nghị cách đây khoảng 3 km
+星期三 有 会议|Thứ tư có cuộc họp
+老板 下午 有 会议|Buổi chiều ông chủ có cuộc họp
+今天 天气 怎么样?|Hôm nay thời tiết thế nào?
+今天 天气 真 热|Hôm nay trời nóng thật
+昨天 天气 很 冷|Hôm qua trời rất lạnh
+明天 天气 太 热 了|Ngày mai trời nóng quá
+今天 太 冷 了|Hôm nay lạnh quá
+海防 今天 天气 怎么样?|Hôm nay thời tiết Hải Phòng thế nào?
+台湾 天气 很 热|Thời tiết Đài Loan rất nóng
+英国 天气 很 冷|Thời tiết nước Anh rất lạnh
+越南 天气 真 热|Thời tiết Việt Nam nóng thật
+日本 今天 很 冷|Hôm nay ở Nhật Bản rất lạnh
+中国 的 天气 怎么样?|Thời tiết Trung Quốc thế nào?
+你 的 汉语 怎么样?|Tiếng Hán của bạn thế nào?
+你 的 工作 怎么样?|Công việc của bạn thế nào?
+你 的 公司 怎么样?|Công ty của bạn thế nào?
+我们 的 老师 会 说 汉语 也 会 说 英语|Giáo viên chúng tôi biết nói tiếng Hán và cũng biết nói tiếng Anh
+晚上 我 在 家 学习 汉语|Buổi tối tôi ở nhà học tiếng Hán
+星期天 你 在 家 吗?|Chủ nhật bạn có ở nhà không?
+今天 下午 你 有空儿 吗?|Chiều nay bạn có rảnh không?
+明天 早上 我 去 公司|Sáng mai tôi đến công ty`.split('\n').map(l=>{const[a,v]=l.split('|');const q=a.endsWith('?');return{t:a.replace('?','').split(' '),v,q}});
+
+const $=s=>document.querySelector(s),shuf=a=>[...a].sort(()=>Math.random()-.5);
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.split('/')[0]);u.lang='zh-CN';u.rate=.8;const v=speechSynthesis.getVoices().find(x=>x.lang.replace('_','-').startsWith('zh'));if(v)u.voice=v;speechSynthesis.speak(u)}catch(e){}}
+window.say=say;
+const T=[['list','📖 Danh sách'],['card','🃏 Flashcard'],['py','🎯 Hán → Pinyin'],['vi','🎯 Hán → Nghĩa'],['han','🎯 Nghĩa → Hán'],['sen','🧩 Ghép câu']];
+const nav=$('#nav');
+T.forEach(([k,n])=>{const b=document.createElement('button');b.textContent=n;b.dataset.k=k;b.onclick=()=>go(k);nav.appendChild(b)});
+function go(k){[...nav.children].forEach(b=>b.classList.toggle('on',b.dataset.k===k));({list,card,py:()=>quiz('py'),vi:()=>quiz('vi'),han:()=>quiz('han'),sen})[k]();window.scrollTo(0,0)}
+
+function list(){
+ $('#v').innerHTML=`<input class="s" id="q" placeholder="🔍 Tìm chữ Hán, pinyin hoặc nghĩa..."><div class="card tw"><table><thead><tr><th>#</th><th>Chữ Hán</th><th>Phiên âm</th><th>Nghĩa</th><th></th></tr></thead><tbody id="tb"></tbody></table></div>`;
+ const draw=f=>{$('#tb').innerHTML=D.map((w,i)=>({w,i})).filter(({w})=>!f||(w.h+w.p+w.v).toLowerCase().includes(f)).map(({w,i})=>`<tr><td class="mut">${i+1}</td><td class="h han">${w.h}</td><td class="p">${w.p}</td><td>${w.v}</td><td><button class="sp" onclick="say('${w.h}')">🔊</button></td></tr>`).join('')};
+ draw('');$('#q').oninput=e=>draw(e.target.value.trim().toLowerCase());
+}
+
+let deck=[],ci=0;
+function card(){if(!deck.length)deck=[...D];
+ const w=deck[ci];
+ $('#v').innerHTML=`<div class="stat"><span>Thẻ ${ci+1}/${deck.length}</span><span>Bấm vào thẻ để lật</span></div>
+ <div class="fc" id="fc"><div class="fi"><div class="fs a"><div class="big han">${w.h.split('/')[0]}</div>${w.h.includes('/')?`<div class="han" style="font-size:1.4rem">${w.h.split('/')[1]}</div>`:''}</div><div class="fs b"><div style="font-size:2rem;font-weight:700">${w.p}</div><div style="font-size:1.4rem;margin-top:8px">${w.v}</div></div></div></div>
+ <div class="row"><button class="btn g" id="pv">◀ Trước</button><button class="sp" id="sd" style="width:46px;height:46px">🔊</button><button class="btn g" id="nx">Sau ▶</button></div>
+ <div class="row"><button class="btn" id="sh">🔀 Xáo trộn</button><button class="btn g" id="rs">↺ Theo thứ tự</button></div>`;
+ $('#fc').onclick=()=>$('#fc').classList.toggle('f');
+ $('#sd').onclick=()=>say(w.h);
+ $('#pv').onclick=()=>{ci=(ci-1+deck.length)%deck.length;card()};
+ $('#nx').onclick=()=>{ci=(ci+1)%deck.length;card()};
+ $('#sh').onclick=()=>{deck=shuf(D);ci=0;card()};
+ $('#rs').onclick=()=>{deck=[...D];ci=0;card()};
+}
+
+const M={py:{t:'Chọn phiên âm đúng',q:w=>w.h,a:w=>w.p,big:1},vi:{t:'Chọn nghĩa đúng',q:w=>w.h,a:w=>w.v,big:1},han:{t:'Chọn chữ Hán đúng',q:w=>w.v,a:w=>w.h,han:1}};
+let sc={score:0,total:0,streak:0};
+function quiz(k){
+ const m=M[k],w=D[Math.floor(Math.random()*D.length)],ans=m.a(w);
+ let o=[ans];for(const x of shuf(D)){const t=m.a(x);if(!o.includes(t))o.push(t);if(o.length==4)break}
+ o=shuf(o);
+ $('#v').innerHTML=`<div class="card"><div class="stat"><span>${m.t}</span><span>✅ ${sc.score}/${sc.total} · 🔥 ${sc.streak}</span></div>
+ <div class="q"><div class="${m.big?'big han':''}" style="${m.big?'':'font-size:1.8rem;font-weight:700'}">${m.q(w)}</div>${m.big?`<button class="sp" style="margin-top:8px" onclick="say('${w.h}')">🔊</button>`:''}</div>
+ <div class="opts">${o.map(t=>`<button class="opt ${m.han?'han':''}" style="${m.han?'font-size:1.6rem':''}">${t}</button>`).join('')}</div>
+ <div class="msg" id="mg"></div><div class="row"><button class="btn" id="nx" style="display:none">Câu tiếp ▶</button></div></div>`;
+ document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+  const ok=b.textContent===ans;sc.total++;ok?(sc.score++,sc.streak++):sc.streak=0;
+  document.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(x.textContent===ans)x.classList.add('ok')});
+  if(!ok)b.classList.add('no');
+  $('#mg').innerHTML=ok?'🎉 Chính xác!':`❌ Đáp án: ${w.h} · ${w.p} · ${w.v}`;
+  say(w.h);$('#nx').style.display='';$('#nx').onclick=()=>quiz(k);
+ });
+}
+
+let si=0,order=[];
+function sen(){
+ if(!order.length)order=shuf(S.map((_,i)=>i));
+ const s=S[order[si%order.length]],toks=shuf(s.t.map((t,i)=>({t,i})));
+ let ans=[];
+ $('#v').innerHTML=`<div class="card"><div class="stat"><span>Câu ${si%order.length+1}/${order.length}</span><span>Chỉ dùng từ vựng đã học</span></div>
+ <div class="q"><div class="mut" style="font-size:.9rem">Ghép thành câu đúng:</div><div style="font-size:1.3rem;font-weight:700;margin-top:6px">${s.v}</div></div>
+ <div class="zone" id="zn"></div><div class="row" id="pool" style="margin-top:0"></div>
+ <div class="msg" id="mg"></div>
+ <div class="row"><button class="btn g" id="rs">↺ Làm lại</button><button class="btn" id="ck">Kiểm tra</button><button class="btn g" id="nx" style="display:none">Câu tiếp ▶</button></div></div>`;
+ const draw=()=>{
+  $('#zn').innerHTML=ans.map(a=>`<button class="tk han" data-i="${a.i}" data-w="1">${a.t}</button>`).join('');
+  $('#pool').innerHTML=toks.filter(x=>!ans.includes(x)).map(x=>`<button class="tk han" data-i="${x.i}">${x.t}</button>`).join('');
+  document.querySelectorAll('.tk').forEach(b=>b.onclick=()=>{const x=toks.find(t=>t.i==b.dataset.i);if(b.dataset.w)ans=ans.filter(a=>a!==x);else{ans.push(x);say(x.t)}draw()});
+ };draw();
+ const full=s.t.join('')+(s.q?'？':'。');
+ $('#rs').onclick=()=>{ans=[];draw();$('#mg').textContent=''};
+ $('#ck').onclick=()=>{
+  const ok=ans.length===s.t.length&&ans.every((a,i)=>a.t===s.t[i]);
+  $('#mg').innerHTML=ok?`🎉 Chính xác!<br><span class="han" style="font-size:1.4rem">${full}</span>`:`❌ Chưa đúng<div class="ref">💡 Đáp án tham khảo:<br><span class="han" style="font-size:1.4rem">${s.t.join(' ')}${s.q?' ？':' 。'}</span></div>`;
+  if(ok){say(s.t.join(''))}else say(s.t.join(''));
+  $('#nx').style.display='';
+ };
+ $('#nx').onclick=()=>{si++;sen()};
+}
+go('list');
+</script>
+</body>
+</html>
